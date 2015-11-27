@@ -1,0 +1,9 @@
+#SUNDAY NOV 22 7am Eastern (use http://currentmillis.com/ to generate a time to the Sunday just passed)
+#For example, this will have the first draw on the 29.
+debug: true
+first-last-draw: 1448193600000
+interval: 604800000 #1 week (milliseconds)
+gift-box-player: CruXXx #username of skin to use head
+blacklist-materials:
+- DIRT
+- SAND
