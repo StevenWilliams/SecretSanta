@@ -2,11 +2,10 @@ package net.onepeace.santa.listener;
 
 import net.onepeace.santa.SecretSanta;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import java.util.EventListener;
-
-public class LoginReminder implements EventListener {
+public class LoginReminder implements Listener {
     private final SecretSanta plugin;
 
     public LoginReminder(SecretSanta plugin) {

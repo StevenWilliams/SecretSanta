@@ -4,6 +4,7 @@ import net.onepeace.santa.commands.GiftCommand;
 import net.onepeace.santa.commands.TestCommand;
 import net.onepeace.santa.listener.GiftBox;
 import net.onepeace.santa.listener.GiftMenuClose;
+import net.onepeace.santa.listener.LoginReminder;
 import net.onepeace.santa.listener.internal.GiftBlacklist;
 import net.onepeace.santa.runnables.CleanGiftBoxes;
 import net.onepeace.santa.runnables.DistributeGiftsTimer;
@@ -33,6 +34,7 @@ public class SecretSanta extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new GiftBox(this), this);
         this.getServer().getPluginManager().registerEvents(new GiftMenuClose(this), this);
         this.getServer().getPluginManager().registerEvents(new GiftBlacklist(this), this);
+        this.getServer().getPluginManager().registerEvents(new LoginReminder(this), this);
         this.getCommand("secretsanta").setExecutor(new GiftCommand(this));
         this.getCommand("secretsantatest").setExecutor(new TestCommand(this));
         new DistributeGiftsTimer(this).runTaskTimer(this, 0, 200);
