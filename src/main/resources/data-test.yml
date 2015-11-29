@@ -11,8 +11,11 @@ gifts:
         item: wood
         claimed: true
         round: 2
+        given:
 
     Notch:
       item: stone
     hades: dirt
 
+uuids:
+  5: sdfsdf-sfgdfg-dfgdfgdfg

@@ -9,9 +9,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
 public class GiftCommand implements CommandExecutor {
+    private SecretSanta plugin;
+
+    public GiftCommand(SecretSanta plugin) {
+        this.plugin = plugin;
+    }
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String tag, String[] args) {
-        if(!(sender instanceof Player)) {
+        if (!(sender instanceof Player)) {
             sender.sendMessage("Only players can use this command!");
             return false;
         }

@@ -4,7 +4,7 @@ import net.onepeace.santa.SecretSanta;
 import org.bukkit.scheduler.BukkitRunnable;
 
 public class DistributeGiftsTimer extends BukkitRunnable {
-    private SecretSanta plugin;
+    private final SecretSanta plugin;
 
     public DistributeGiftsTimer(SecretSanta plugin) {
         this.plugin = plugin;
@@ -12,8 +12,9 @@ public class DistributeGiftsTimer extends BukkitRunnable {
 
     @Override
     public void run() {
-        if(System.currentTimeMillis() >= plugin.getData().getNextDraw()) {
+        if (System.currentTimeMillis() >= plugin.getData().getNextDraw()) {
             new DistributeGifts(plugin).run();
+            plugin.getData().setLastDraw(plugin.getData().getNextDraw());
         }
     }
 }

@@ -4,5 +4,10 @@ main: ${project.groupId}.${project.artifactId}.${project.name}
 description: |
     ${project.description}
 authors: [puppy3276]
-depend: [SignShop]
-#TODO: add commands, secretsanta, and secretsantatest
+commands:
+  secretsanta:
+    description: Give a gift!
+    permission: secretsanta.participate
+  secretsantatest:
+    description: internal debug command
+    permission: secretsanta.admin

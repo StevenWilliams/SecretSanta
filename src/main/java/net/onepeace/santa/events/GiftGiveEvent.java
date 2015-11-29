@@ -8,20 +8,20 @@ import org.bukkit.inventory.ItemStack;
 public class GiftGiveEvent extends Event {
 
     private static final HandlerList handlers = new HandlerList();
+    private final ItemStack item;
+    private final Player gifter;
     private boolean cancelled;
-    private ItemStack item;
-    private Player gifter;
 
     public GiftGiveEvent(ItemStack item, Player gifter) {
         this.item = item;
         this.gifter = gifter;
     }
 
-    public HandlerList getHandlers() {
+    public static HandlerList getHandlerList() {
         return handlers;
     }
 
-    public static HandlerList getHandlerList() {
+    public HandlerList getHandlers() {
         return handlers;
     }
 
@@ -32,6 +32,7 @@ public class GiftGiveEvent extends Event {
     public Player getGifter() {
         return gifter;
     }
+
     public boolean isCancelled() {
         return cancelled;
     }
