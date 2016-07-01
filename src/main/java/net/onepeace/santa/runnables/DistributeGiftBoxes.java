@@ -16,11 +16,14 @@ public class DistributeGiftBoxes extends BukkitRunnable {
 
     public static void giveGiftBoxes(SecretSanta plugin, final Player player) {
         List<Gift> gifts = plugin.getData().getGiftsToClaim(player.getUniqueId());
+        if(gifts.size() == 0) return;
         for (Gift gift : gifts) {
             if (!gift.giftBoxGiven()) {
-                player.getInventory().addItem(gift.getGiftBoxItem());
-                gift.setGiftBoxGiven();
-                player.sendMessage(SecretSanta.msgPrefix + "You have received a gift!");
+                if(!(player.getInventory().firstEmpty() == -1)) {
+                    player.getInventory().addItem(gift.getGiftBoxItem());
+                    gift.setGiftBoxGiven();
+                    player.sendMessage(SecretSanta.msgPrefix + "You have received a gift!");
+                }
             }
         }
         new BukkitRunnable() {

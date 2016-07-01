@@ -21,6 +21,7 @@ public class TestCommand implements CommandExecutor {
             sender.sendMessage("distribute");
             sender.sendMessage("timeuntil");
             sender.sendMessage("player [player]");
+            return true;
         }
         switch (args[0]) {
             case "distribute":

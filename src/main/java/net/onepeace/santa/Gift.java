@@ -73,6 +73,7 @@ public class Gift {
         String UUIDShortID = plugin.getData().getShortID(playerGivenTo);
 
         lore.add(playerPrefix + UUIDShortID);
+        lore.add(ChatColor.GOLD + "Right click to open!");
 
         skullMeta.setLore(lore);
 

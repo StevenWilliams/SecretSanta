@@ -40,7 +40,7 @@ public class Data {
         try {
             data.save(file);
         } catch (IOException ex) {
-            plugin.getLogger().log(Level.SEVERE, "Could not save config to " + file, ex);
+            plugin.getLogger().log(Level.SEVERE, "Could not save data to " + file, ex);
         }
     }
 

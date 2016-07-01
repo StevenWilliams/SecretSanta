@@ -25,16 +25,19 @@ public class GiftBox implements Listener {
 
     @EventHandler
     public void use(PlayerInteractEvent e) {
-        if (e.getItem() == null) return;
+        if (e.getPlayer().getItemInHand() == null || e.getItem() == null) return;
         final Player player = e.getPlayer();
-        if (Gift.getGift(plugin, e.getItem()) != null) {
-            Gift gift = Gift.getGift(plugin, e.getItem());
+        if (Gift.getGift(plugin, player.getItemInHand()) != null) {
+            Gift gift = Gift.getGift(plugin, player.getItemInHand());
             ItemStack item = gift.claim();
+
+            //player.getInventory().remove(e.getItem());
+
 
             String name = item.getItemMeta().getDisplayName() == null ? item.getType().toString().toLowerCase() : item.getItemMeta().getDisplayName();
             player.sendMessage(SecretSanta.msgPrefix + "You have received a gift of " + item.getAmount() + " " + name);
-            player.getInventory().addItem(item);
-            player.getInventory().remove(e.getItem());
+            player.setItemInHand(item);
+
             e.setCancelled(true);
 
             new BukkitRunnable() {
